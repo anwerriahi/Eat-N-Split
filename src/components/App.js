@@ -66,14 +66,14 @@ export default function App() {
     handleResetSplitBill();
   }
 
-  function handleAddFriend(name, url) {
+  function handleAddFriend(name, image) {
     const newFriend = {
       id: uuidv4(), // Use uuid to generate a unique id
-      name: name,
-      image: url,
+      name,
+      image,
       balance: 0,
     };
-    if (!name || !url) return;
+    if (!name || !image) return;
     setFriendList([...friendList, newFriend]);
   }
   return (
