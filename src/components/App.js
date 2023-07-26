@@ -44,7 +44,10 @@ export default function App() {
   }
 
   function handleSplitBill(friend) {
-    setBillSetting({ state: true, friend: friend });
+    setBillSetting({
+      state: billSetting.friend === friend ? !billSetting.state : true,
+      friend: friend,
+    });
   }
 
   function handleResetSplitBill() {
@@ -79,7 +82,11 @@ export default function App() {
   return (
     <div className="app">
       <div className="sidebar">
-        <FriendsList onclick={handleSplitBill} friendList={friendList} />
+        <FriendsList
+          onclick={handleSplitBill}
+          friendList={friendList}
+          billSetting={billSetting}
+        />
 
         {isOpen && <FormAddFriend onsubmit={handleAddFriend} />}
 

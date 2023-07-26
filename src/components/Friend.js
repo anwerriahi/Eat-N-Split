@@ -1,6 +1,6 @@
 import { Button } from "./App";
 
-export function Friend({ friend, onclick }) {
+export function Friend({ friend, onclick, billSetting }) {
   return (
     <div className="friend">
       <li>
@@ -26,7 +26,9 @@ export function Friend({ friend, onclick }) {
           )}
         </p>
         <Button onclick={onclick} friend={friend}>
-          Select
+          {!billSetting.state && billSetting.friend === friend && "Select"}
+          {billSetting.state && billSetting.friend === friend && "Close"}
+          {billSetting.friend !== friend && "Select"}
         </Button>
       </li>
     </div>
