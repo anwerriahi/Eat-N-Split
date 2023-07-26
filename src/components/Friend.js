@@ -1,4 +1,4 @@
-import { Button } from "./App";
+import Button from "./Button";
 
 export function Friend({ friend, onclick, billSetting }) {
   return (

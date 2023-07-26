@@ -4,6 +4,7 @@ import "../index.css";
 import { FormSplitBill } from "./FormSplitBill";
 import { FormAddFriend } from "./FormAddFriend";
 import { FriendsList } from "./FriendsList";
+import Button from "./Button";
 
 const initialFriends = [
   {
@@ -25,14 +26,6 @@ const initialFriends = [
     balance: 0,
   },
 ];
-export function Button({ onclick, children, friend }) {
-  return (
-    <button className="button" onClick={() => onclick(friend)}>
-      {children}
-    </button>
-  );
-}
-
 export default function App() {
   const [isOpen, setIsOpen] = useState(false);
   const [billSetting, setBillSetting] = useState({ state: false, friend: {} });
@@ -41,7 +34,7 @@ export default function App() {
   function handleToggleIsOpen() {
     setIsOpen(!isOpen);
     console.log(friendList);
-    setBillSetting({state:false, friend:{}});
+    setBillSetting({ state: false, friend: {} });
   }
 
   function handleSplitBill(friend) {
