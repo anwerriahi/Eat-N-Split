@@ -36,7 +36,7 @@ export function FormSplitBill({ friend, onclick }) {
         }}
       />
 
-      <label>👦 {friend.name} expense</label>
+      <label>👦 {friend.name}'s expense</label>
       <input type="text" value={billValue - myExpense} disabled />
 
       <label>🤑 Who is paing the bill</label>
@@ -44,6 +44,7 @@ export function FormSplitBill({ friend, onclick }) {
         <option value={true}>You</option>
         <option value={false}>{friend.name}</option>
       </select>
+
       <button
         type="submit"
         className="button"
