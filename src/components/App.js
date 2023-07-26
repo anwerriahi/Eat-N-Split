@@ -41,6 +41,7 @@ export default function App() {
   function handleToggleIsOpen() {
     setIsOpen(!isOpen);
     console.log(friendList);
+    setBillSetting({state:false, friend:{}});
   }
 
   function handleSplitBill(friend) {
@@ -48,6 +49,7 @@ export default function App() {
       state: billSetting.friend === friend ? !billSetting.state : true,
       friend: friend,
     });
+    setIsOpen(false);
   }
 
   function handleResetSplitBill() {
