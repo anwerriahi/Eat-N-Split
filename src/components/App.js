@@ -55,11 +55,13 @@ export default function App() {
     who === true
       ? setFriendList(
           friendList.map((f) =>
-            f === friend ? { ...f, balance: balance * -1 } : f
+            f === friend ? { ...f, balance: +balance * -1 } : f
           )
         )
       : setFriendList(
-          friendList.map((f) => (f === friend ? { ...f, balance: balance } : f))
+          friendList.map((f) =>
+            f === friend ? { ...f, balance: +balance } : f
+          )
         );
     handleResetSplitBill();
   }
@@ -71,6 +73,7 @@ export default function App() {
       image: url,
       balance: 0,
     };
+    if (!name || !url) return;
     setFriendList([...friendList, newFriend]);
   }
   return (
