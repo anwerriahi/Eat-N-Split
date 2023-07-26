@@ -2,7 +2,13 @@ import { Button } from "./App";
 
 export function Friend({ friend, onclick, billSetting }) {
   return (
-    <div className="friend">
+    <div
+      className={
+        billSetting.state && billSetting.friend === friend
+          ? "friend hovered"
+          : "friend"
+      }
+    >
       <li>
         <img src={friend.image} alt={friend.name} />
         <h3>{friend.name}</h3>

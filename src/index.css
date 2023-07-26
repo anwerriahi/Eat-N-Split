@@ -72,7 +72,10 @@ body {
 .sidebar li:hover {
   background-color: var(--color-lightest);
 }
-
+.hovered {
+  background-color: var(--color-lightest);
+  border-radius: 10px;
+}
 .sidebar li img {
   border-radius: 50%;
   width: 100%;
