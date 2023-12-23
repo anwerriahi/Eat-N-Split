@@ -18,6 +18,7 @@ export function FormSplitBill({ friend, onclick }) {
       <label>💵 Bill value</label>
       <input
         type="number"
+        min={0}
         value={billValue}
         onChange={(e) => setBillValue(+e.target.value)}
       />
@@ -25,6 +26,7 @@ export function FormSplitBill({ friend, onclick }) {
       <label>🙎Your expense</label>
       <input
         type="number"
+        min={0}
         value={myExpense}
         onChange={(e) => {
           // eslint-disable-next-line no-lone-blocks
